@@ -15,12 +15,12 @@ class User(db.Model):
   name = db.Column(db.String(100),nullable=False)
   email = db.Column(db.String(50))  
   contact = db.Column(db.String(200))
-  user_type = db.Column(db.String(100),'author')
+  user_type = db.Column(db.String(100),default="author")
   password = db.Column(db.String(10))
   created_at = db.Column(db.String(255),nullable=True)
   updated_at = db.Column(db.String(255),nullable=True)
-# profile = db.relationship("Profile", uselist=False, backref="user")
-# books = db.relationship("Book",backref="user")
+  profile = db.relationship("Profile", uselist=False, backref="user")
+  books = db.relationship("Book",backref="user")
   
 
 
