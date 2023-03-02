@@ -11,7 +11,7 @@ class PublishingCompany(db.Model):
   user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
   created_at = db.Column(db.String(255),nullable=True)
   updated_at = db.Column(db.String(255),nullable=True)
-#   books = db.relationship("Book",backref="publishing_company")
+  books = db.relationship("Book",backref="publishing_company")
 
 
   def __init__(self, name,contact,address,user_id,created_at,updated_at):
